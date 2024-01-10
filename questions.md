@@ -52,18 +52,18 @@ m[2]=281
 
 ```go
 func update(p *int) {
-	b := 2
-	p = &b
+    b := 2
+    p = &b
 }
 
 func main() {
-	var (
-		a = 1
-		p = &a
-	)
-	fmt.Println(*p)
-	update(p)
-	fmt.Println(*p)
+    var (
+        a = 1
+        p = &a
+    )
+    fmt.Println(*p)
+    update(p)
+    fmt.Println(*p)
 }
 ```
 Вывод:
@@ -74,8 +74,8 @@ func main() {
 В функции изменяется копия поинтера. Если мы хотим, чтобы наша функция update() работала можем переписать её следующи образом:
 ```go
 func update(p *int) {
-	b := 2
-	*p = b
+    b := 2
+    *p = b
 }
 ```
 
@@ -123,14 +123,14 @@ func main() {
 
 ```go
 func someAction(v []int8, b int8) {
-	v[0] = 100
-	v = append(v, b)
+    v[0] = 100
+    v = append(v, b)
 }
 
 func main() {
-	var a = []int8{1, 2, 3, 4, 5}
-	someAction(a, 6)
-	fmt.Println(a)
+    var a = []int8{1, 2, 3, 4, 5}
+    someAction(a, 6)
+    fmt.Println(a)
 }
 ```
 Вывод:
